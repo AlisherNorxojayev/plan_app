@@ -16,7 +16,8 @@ class _HomeScreenState extends State<HomeScreen> {
   List<Plants> list_recomended_plants = [
     Plants("img/r1.jpg", "Flower", 400),
     Plants("img/r2.jpg", "Flower", 250),
-    Plants("img/r3.jpg", "Flower", 300)
+    Plants("img/r3.jpg", "Flower", 300),
+
   ];
   List<Plants> list_featured_plants = [
     Plants("img/f1.jpg", "Flower", 600),
@@ -40,8 +41,9 @@ class _HomeScreenState extends State<HomeScreen> {
         },
         currentIndex: _curretIndex,
         items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.plagiarism), label: ""),
-          BottomNavigationBarItem(icon: Icon(Icons.heart_broken), label: ""),
+          BottomNavigationBarItem(icon: Icon(Icons.spa_outlined), label: ""),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.favorite_outline), label: ""),
           BottomNavigationBarItem(icon: Icon(Icons.person_outline), label: "")
         ],
       ),
@@ -117,7 +119,9 @@ class _HomeScreenState extends State<HomeScreen> {
                                   context,
                                   MaterialPageRoute(
                                     builder: (context) => MorePlants(
-                                        list_plants: list_recomended_plants),
+                                        list_plants: list_recomended_plants,
+                                        height: 0.5,
+                                        width: 0.4),
                                   ));
                             },
                             child: Container(
@@ -217,7 +221,10 @@ class _HomeScreenState extends State<HomeScreen> {
                                   context,
                                   MaterialPageRoute(
                                     builder: (context) => MorePlants(
-                                        list_plants: list_featured_plants),
+                                      list_plants: list_featured_plants,
+                                      height: 0.5,
+                                      width: 0.7,
+                                    ),
                                   ));
                             },
                             child: Container(
